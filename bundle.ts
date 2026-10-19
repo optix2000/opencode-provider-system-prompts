@@ -7,7 +7,7 @@ const out = await Bun.build({
   target: "bun",
   format: "esm",
   minify: false,
-  external: ["@opencode-ai/plugin"],
+  external: ["@opencode/plugin"],
 })
 
 if (!out.success) {
