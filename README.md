@@ -76,11 +76,11 @@ For a bundled local install:
 npm ci
 npm run bundle
 config_home="${XDG_CONFIG_HOME:-$HOME/.config}/opencode"
-mkdir -p "$config_home/plugins"
-cp dist/provider-system-prompts.js "$config_home/plugins/provider-system-prompts.js"
+mkdir -p "$config_home/plugins/provider-system-prompts"
+cp dist/provider-system-prompts.js "$config_home/plugins/provider-system-prompts/index.js"
 ```
 
-The bundle contains this plugin and YAML support, but leaves the public `@opencode/plugin` runtime external. Make `@opencode/plugin@2.0.32` resolvable from your OpenCode config directory (for example, declare it in that directory's `package.json` and install dependencies). Do not register both the bundle and source package. Reload plugins or restart OpenCode after changing registrations.
+The bundle contains this plugin and YAML support, but leaves the public `@opencode/plugin` runtime external. Make `@opencode/plugin@2.0.32` resolvable from your OpenCode config directory (for example, declare it in that directory's `package.json` and install dependencies). Do not register both the bundle and source package. Configuration changes reload automatically; use `/reload` to force a full reload if needed.
 
 ## Development
 
